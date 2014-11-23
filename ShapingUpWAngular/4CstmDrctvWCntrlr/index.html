@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html ng-app="gemStore">
   <head>
-    <link rel="stylesheet" type="text/css" href="../bootstrap.min.css" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
     <script type="text/javascript" src="../angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
@@ -20,16 +24,7 @@
         <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
 
         <!-- Image Gallery  -->
-        <div ng-controller="GalleryController as gallery"  ng-show="product.images.length">
-          <div class="img-wrap">
-            <img ng-src="{{product.images[gallery.current]}}" />
-          </div>
-          <ul class="img-thumbnails clearfix">
-            <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
-              <img ng-src="{{image}}" />
-            </li>
-          </ul>
-        </div>
+        <product-gallery></product-gallery>
 
         <!-- Product Tabs  -->
         <product-tabs></product-tabs>
